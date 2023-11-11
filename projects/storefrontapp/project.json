@@ -99,7 +99,7 @@
           }
         ],
         "ngswConfigPath": "projects/storefrontlib/cms-structure/pwa/ngsw-config.json",
-        "scripts": []
+        "scripts": ["projects/assets/src/js/profile-tag.js"]
       },
       "configurations": {
         "production": {

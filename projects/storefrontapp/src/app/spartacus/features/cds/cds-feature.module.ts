@@ -13,7 +13,7 @@ import { provideConfig } from '@spartacus/core';
   providers: [
     provideConfig(<CdsConfig>{
       cds: {
-        tenant: 'argotest',
+        tenant: 'hyperdev',
         baseUrl: 'https://api.stage.context.cloud.sap',
         endpoints: {
           strategyProducts:
@@ -28,9 +28,9 @@ import { provideConfig } from '@spartacus/core';
       cds: {
         profileTag: {
           javascriptUrl:
-            'https://tag.static.stage.context.cloud.sap/js/profile-tag.js',
+            'http://localhost:4200/assets/splash/profile-tag.js',
           configUrl:
-            'https://tag.static.stage.context.cloud.sap/config/mytenant-main-default',
+            'https://tag.static.stage.context.cloud.sap/config/hyperdev-arturtest-default',
           allowInsecureCookies: true,
         },
       },

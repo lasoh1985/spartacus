@@ -77,12 +77,14 @@ export class SearchBoxComponentService {
       this.getProductResults(config),
       this.getProductSuggestions(config),
       this.getSearchMessage(config),
+      this.getRecentSearches(config)
     ]).pipe(
-      map(([productResults, suggestions, message]) => {
+      map(([productResults, suggestions, message, recentSearches]) => {
         return {
           products: productResults ? productResults.products : undefined,
           suggestions,
           message,
+          recentSearches
         };
       }),
       tap((results) =>
@@ -159,7 +161,7 @@ export class SearchBoxComponentService {
     return (
       (!!results.products && results.products.length > 0) ||
       (!!results.suggestions && results.suggestions.length > 0) ||
-      !!results.message
+      !!results.message || !!results.recentSearches
     );
   }
 
@@ -249,6 +251,18 @@ export class SearchBoxComponentService {
     );
   }
 
+  /**
+   * Emits a 'no match' message, in case the product search results and search suggestions are empty.
+   * Otherwise it emits null.
+   */
+  protected getRecentSearches(
+    config: SearchBoxConfig
+  ): Observable<string[] | undefined> {
+    console.log((<any>window).Y_TRACKING, config);
+    return of(['aaa', 'bbb']);
+  }
+
+  /**
   /**
    * Navigates to the search result page with a given query
    */
